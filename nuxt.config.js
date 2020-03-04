@@ -11,7 +11,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       // To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <head>
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no'}
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -25,17 +25,17 @@ export default {
   ** Global CSS
   */
   css: [
-    "leaflet/dist/leaflet.css"
+    'leaflet/dist/leaflet.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-      '~/plugins/notifier.js',
-      {
-        src: "~/plugins/leaflet",
-        ssr: false
-      }
+    '~/plugins/notifier.js',
+    {
+      src: '~/plugins/leaflet',
+      ssr: false
+    }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -62,18 +62,18 @@ export default {
     componentPlugins: [
 
       'CardPlugin',
-      'TablePlugin', 
-      'InputGroupPlugin', 
+      'TablePlugin',
+      'InputGroupPlugin',
       'LayoutPlugin',
       'NavPlugin',
-      'PaginationPlugin', 
+      'PaginationPlugin',
       'NavbarPlugin',
       'ImagePlugin',
       'IconsPlugin',
       'SpinnerPlugin',
-      'JumbotronPlugin', 
+      'JumbotronPlugin',
       'FormInputPlugin',
-      'FormSelectPlugin',  
+      'FormSelectPlugin',
       'FormGroupPlugin',
       'FormPlugin',
       'FormCheckboxPlugin',
@@ -100,7 +100,7 @@ export default {
       'BVToastPlugin'
 
     ],
-    directivePlugins: ['VBPopoverPlugin', 'VBTooltipPlugin', 'VBScrollspyPlugin'],
+    directivePlugins: ['VBPopoverPlugin', 'VBTooltipPlugin', 'VBScrollspyPlugin']
     /*,
     // Or if you want specific set of components and directives ::For optimizing purpouse
     directives: ['VBModal', 'VBPopover', 'VBTooltip', 'VBScrollspy']
@@ -113,7 +113,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:3000'
+    baseURL: process.env.NODE_ENV === 'production' ? 'https://peraride-api.herokuapp.com' : 'http://localhost:3000'
   },
   /*
   ** Build configuration
